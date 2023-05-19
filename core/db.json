@@ -1,0 +1,64 @@
+{
+    "Users": {
+        "1698951222": {
+            "Full_name": "Anasxon A'zamov",
+            "Username": "U1_UXdesigner",
+            "cn_code": "uz"
+        },
+        "5590165039": {
+            "Full_name": "Anasxon A\u02bczamov",
+            "Username": "ui_uxdesignerpro",
+            "cn_code": "uz"
+        }
+    },
+    "Text_to_image": {
+        "1698951222": {
+            "Full_name": "Anasxon A'zamov",
+            "Question": [
+                "monaliza rasmini chizib ber",
+                "monaliza rasmini chizib ber",
+                "monaliza rasmini chizib ber",
+                "monaliza rasmini chizib ber",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "kulayotgan odam",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz",
+                "Olmani rasmini chiz"
+            ]
+        },
+        "5590165039": {
+            "Full_name": "Anasxon A\u02bczamov",
+            "Question": [
+                "Figma"
+            ]
+        }
+    },
+    "Image url": {
+        "1698951222": {
+            "Full_name": "Anasxon A'zamov",
+            "Images": [
+                {},
+                {},
+                "https://api.deepai.org/job-view-file/e7b6738e-0659-4f9f-9ba3-78b791099e14/outputs/output.jpg"
+            ]
+        },
+        "1": {
+            "Full_name": 2,
+            "Images": [
+                {},
+                {},
+                {},
+                "https://api.deepai.org/job-view-file/a966d4bc-f837-49e2-82ca-272bac16700f/outputs/output.jpg"
+            ]
+        }
+    }
+}

@@ -98,3 +98,7 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/venv,test
 
 
+__pycache__
+
+core/__pycache__
+venv

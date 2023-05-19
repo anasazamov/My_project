@@ -2,7 +2,7 @@ from flask import Flask,request
 from telegram import Bot, Update
 from telegram.ext import Dispatcher, CommandHandler,MessageHandler,Filters
 import os
-
+from callback import (start,uz,ru,en,image)
 
 app=Flask(__name__)
 TOKEN=os.environ["TOKEN"]

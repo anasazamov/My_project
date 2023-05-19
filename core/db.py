@@ -25,9 +25,6 @@ class DB:
         
         if self.question.contains(doc_id=chat_id):
             
-            from pprint import pprint
-            pprint(self.question.get(doc_id=chat_id))
-            
             update: list=self.question.get(doc_id=chat_id)["Question"]
             update.append(task)
             
@@ -40,17 +37,21 @@ class DB:
             
         
         
-    def add_image(self,chat_id:str,image_url: list):
+    def add_image(self,chat_id:str,full_name,image_url: str):
         if self.image.contains(doc_id=chat_id):
             
             update: list=self.image.get(doc_id=chat_id)["Images"]
             update.append(image_url)
             self.image.update({"Images":update},doc_ids=[chat_id])            
         else:
-            self.image.insert(Document({"Images":[image_url]},doc_id=chat_id))
+            self.image.insert(Document({"Full_name":full_name,"Images":[image_url]},doc_id=chat_id))
         
     def get_code(self,chat_id: int):
         
         return self.user.get(doc_id=chat_id)["cn_code"]
+    
+    def get_contains(self, chat_id: int):
+        
+        return self.user.contains(doc_id=chat_id)
         
     
