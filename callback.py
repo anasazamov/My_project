@@ -61,11 +61,12 @@ def image(update: Update, callback: CallbackContext):
         text="The process may take a few seconds"
         
     db.add_task(update.message.chat_id,update.message.chat.full_name,update.message.text)
-        
     update.message.reply_html(text)
-    data=get_json(to_translate(update.message.text),update.message.chat_id,update.message.chat.full_name,update,callback)
-    update.message.reply_photo(data)
-    update.message.reply_document(data)
+    
+    data1=get_json(to_translate(update.message.text),update.message.chat_id,update.message.chat.full_name,update,callback)
+    update.message.reply_text(f"Rasmingizni quyidagi havola orqali ko'rishingiz mumkin:\n{data1}")
+    update.message.reply_photo(data1)
+    update.message.reply_document(data1)
     
     
     

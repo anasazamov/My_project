@@ -15,7 +15,8 @@ def download_image(url, file_name):
         response.raw.decode_content = True
         shutil.copyfileobj(response.raw, file) 
         
-    return open("image.jpg","rb")
+        
+    return file
 
 
 def get_result(data,a,b,callback: Update,bot:CallbackContext):
@@ -35,19 +36,18 @@ def get_result(data,a,b,callback: Update,bot:CallbackContext):
         response = requests.request("POST", url, headers=headers, data=payload)
 
         data: dict=response.json()
-        if "percentage" in data.keys():
-            message_id = callback.message.message_id
-            chat_id = callback.message.chat.id
-            new_text = f'process: {data["percentage"]}%'
-
-            bot.edit_message_text(chat_id=chat_id, message_id=message_id, text=new_text)
-
-        elif "imageURL" in data.keys():
+        
+        if "imageURL" in data.keys():
             break
+        elif "percentage" in data.keys():
+            text=callback.message.reply_text(f'process: {data["percentage"]}%')
+            time.sleep(2)
+            text.edit_text(f'process: {data["percentage"]}%')
+
         
     img_url=data["imageURL"]
     db.add_image(a,b,img_url)
-    return img_url
+    return download_image(img_url,"image.jpg")
 
 
 def get_json(description: str,a,b,callback,bot):
@@ -65,5 +65,5 @@ def get_json(description: str,a,b,callback,bot):
     response = requests.request("POST", url, headers=headers, data=payload)
     data=response.json()["resultId"]
     
-    return download_image(get_result(data,a,b,callback,bot),"image.jpg")
+    return get_result(data,a,b,callback,bot)
 
